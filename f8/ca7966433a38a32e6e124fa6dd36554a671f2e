@@ -1,0 +1,96 @@
+Return-Path: <caml-list-owner@inria.fr>
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by c5ff346549e7 (Postfix) with ESMTPS id 024C85D5
+	for <caml-list@inbox.ocaml.org>; Fri, 30 Mar 2018 19:10:30 +0000 (UTC)
+X-IronPort-AV: E=Sophos;i="5.48,382,1517871600"; 
+   d="scan'208";a="320770176"
+Received: from sympa.inria.fr ([193.51.193.213])
+  by mail2-relais-roc.national.inria.fr with ESMTP; 30 Mar 2018 21:10:29 +0200
+Received: by sympa.inria.fr (Postfix, from userid 20132)
+	id 955E58242B; Fri, 30 Mar 2018 21:10:29 +0200 (CEST)
+Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr [192.134.164.104])
+	by sympa.inria.fr (Postfix) with ESMTPS id D97FA8239C
+	for <caml-list@sympa.inria.fr>; Fri, 30 Mar 2018 21:10:21 +0200 (CEST)
+Authentication-Results: mail3-smtp-sop.national.inria.fr; spf=None smtp.pra=rixed@happyleptic.org; spf=None smtp.mailfrom=rixed@happyleptic.org; spf=None smtp.helo=postmaster@pim.happyleptic.org
+IronPort-PHdr: =?us-ascii?q?9a23=3A0ByN4RNs+l37fcnfNQsl6mtUPXoX/o7sNwtQ0KIM?=
+ =?us-ascii?q?zox0Lfr8rarrMEGX3/hxlliBBdydt6ofzbKO+4nbGkU4qa6bt34DdJEeHzQksu?=
+ =?us-ascii?q?4x2zIaPcieFEfgJ+TrZSFpVO5LVVti4m3peRMNQJW2aFLduGC94iAPERvjKwV1?=
+ =?us-ascii?q?Ov71GonPhMiryuy+4ZLebxlGiTanfb9+MAi9oBnMuMURnYZsMLs6xAHTontPde?=
+ =?us-ascii?q?RWxGdoKkyWkh3h+Mq+/4Nt/jpJtf45+MFOTav1f6IjTbxFFzsmKHw65NfqtRbY?=
+ =?us-ascii?q?UwSC4GYXX3gMnRpJBwjF6wz6Xov0vyDnuOdxxDWWMMvrRr0yRD+s7bpkSAXwhS?=
+ =?us-ascii?q?kJNzA37nzZhM9+jK1UvB2uuh5wzIDPbYGJKPZzZL/Rcc8ASGZfWMtaSixPApm7?=
+ =?us-ascii?q?b4sKF+cMI/hXoJTnp1sPsRS1GBehC/3ryj9Mh3/5w7c62PkmHAHc3QwhEMwBv2?=
+ =?us-ascii?q?nPodX1LqgSSfi1zanMzTrdd/NWxTb955TSfhAmu/GMUqt9fMzMwkchEAPFi0+f?=
+ =?us-ascii?q?qY3jPz6N2eQNsnSb7+p9Ve20kWIotwZxoj2py8wxiYfJnpoYx1De+Slkzos4Jc?=
+ =?us-ascii?q?e0RFN7bNOlCpdcqiKXOoluTs4hQ2xkojs2x7IFtJKhfSUHxo4ryh/DZ/GBboOG?=
+ =?us-ascii?q?+AjsVPyLLjd9nH9leKywhxK18UW40u38V8y03ExKriVfitnMrnAM1xjN5cifVv?=
+ =?us-ascii?q?t9/1uu1SyI1wDJ5eFIOUE0lazFJJ492rM9loAfvVnNEyL2gkn6ka+be0Q+9uS1?=
+ =?us-ascii?q?6OnqYK3qppqGOI91jgH+PL4umsu6AekgKAgOXmea9vqh27D4/U32Wq1KjuU2k6?=
+ =?us-ascii?q?ndrp/aPdgbpq+lDANP1YYj8Rm/Ay+80NsEhXkHME5FeBWfgof1IV7OJfT4Ae67?=
+ =?us-ascii?q?g1Stizdr2+vLPqbhA5XINnjMiq3tfbd7605GyQo818pT55xOCuJJHPWmUUb0sJ?=
+ =?us-ascii?q?ncDwQlGw2y2efuTttnha0EXmfaKaKVKqLZ+XSF4uYuLvPEMJUUqDvxA/gs/+b/?=
+ =?us-ascii?q?iXIhhV4WO66z0s1EOziDAv16LhDBMjLXidAbHDJS51tsfKnRkFSHFAVrSTO3Vq?=
+ =?us-ascii?q?M46Cs8Ddv5X4fKXpi8hLGZwCawWJpMaTIeUwzeITLTb4yBHsw0RmeKOMY4zW4E?=
+ =?us-ascii?q?XKC5WosszQ2vv0n90bU1drOJqB1djorq0Z1O38OWlRw28mYtXdyc1ieNRnlsj2?=
+ =?us-ascii?q?cFXyM31+Z4u0Mvklo=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0CHAwC/ir5a/7uchwVdg3NhbyiMOowlS?=
+ =?us-ascii?q?QEBBoIyklEUgWYLJ4RdAgiEHRkGBjAYAQIBAQEBAQEBAQFqKII3IoJMBjoGAQE?=
+ =?us-ascii?q?4DwshExIPBYVcEQEBCaQriGuDCYJuAQEFhUqCJgMFh2GBDIEHhBCDEQICgRkpZ?=
+ =?us-ascii?q?IJkgiSHRI92CIVRiFILgSEBixKJFYZmgSUcOIFSMxoIKAg6gkOQT22PVQEB?=
+X-IPAS-Result: =?us-ascii?q?A0CHAwC/ir5a/7uchwVdg3NhbyiMOowlSQEBBoIyklEUgWY?=
+ =?us-ascii?q?LJ4RdAgiEHRkGBjAYAQIBAQEBAQEBAQFqKII3IoJMBjoGAQE4DwshExIPBYVcE?=
+ =?us-ascii?q?QEBCaQriGuDCYJuAQEFhUqCJgMFh2GBDIEHhBCDEQICgRkpZIJkgiSHRI92CIV?=
+ =?us-ascii?q?RiFILgSEBixKJFYZmgSUcOIFSMxoIKAg6gkOQT22PVQEB?=
+X-IronPort-AV: E=Sophos;i="5.48,382,1517871600"; 
+   d="scan'208";a="260448328"
+Received: from pim.happyleptic.org ([5.135.156.187])
+  by mail3-smtp-sop.national.inria.fr with ESMTP/TLS/AES128-GCM-SHA256; 30 Mar 2018 21:10:21 +0200
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=happyleptic.org; s=20160823;
+	h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date; bh=WYyrGva9ff6BuNVEn7TX6LFZyez16yDolPOVhJJkDYA=;
+	b=u0tr6YRv0gfn6zokqR2maPW/eyVuuBHgRymq1Yqo3UopetLJXykNvuHuTN5f6QSStMc2ZnVx5Cl007YNHBg9jjlmIwVelwqNcpyYaSYICT2W4eqqoxJqrzyskd3Wje9/EjV8ovQj9FmiOAn6hPsZgYl5y8JfRqm8qbR7VU7NF3I=;
+Received: from s55943f3c.adsl.online.nl ([85.148.63.60] helo=rxdmac.local)
+	by pim.happyleptic.org with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.84_2)
+	(envelope-from <rixed@happyleptic.org>)
+	id 1f1zPo-0000s5-Ck
+	for caml-list@inria.fr; Fri, 30 Mar 2018 21:10:20 +0200
+Date: Fri, 30 Mar 2018 21:10:14 +0200
+From: Cedric Cellier <rixed@happyleptic.org>
+To: caml-list@inria.fr
+Message-ID: <20180330191013.GA99649@rxdmac.local>
+References: <b779b358-d344-4a4c-c790-746f7e569cf7@ens-lyon.fr>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <b779b358-d344-4a4c-c790-746f7e569cf7@ens-lyon.fr>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+Subject: Re: [Caml-list] Hashtbl and shrinking
+Reply-To: Cedric Cellier <rixed@happyleptic.org>
+X-Loop: caml-list@inria.fr
+X-Sequence: 16764
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+Precedence: bulk
+Sender: caml-list-request@inria.fr
+X-no-archive: yes
+List-Id: <caml-list.inria.fr>
+List-Archive: <http://sympa.inria.fr/sympa/arc/caml-list>
+List-Help: <mailto:sympa_inria@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa_inria@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa_inria@inria.fr?subject=unsubscribe%20caml-list>
+
+For the record, the batteries implementation of Hashtbl had resizing,
+until 1073b283f removed it for reasons not detailed in the commit
+message:
+
+https://github.com/ocaml-batteries-team/batteries-included/commit/1073b283f#diff-e7f93b9409d8530370753934c701a692
+
+
+-- 
+Caml-list mailing list.  Subscription management and archives:
+https://sympa.inria.fr/sympa/arc/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs
