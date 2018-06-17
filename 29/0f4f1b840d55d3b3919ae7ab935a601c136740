@@ -1,0 +1,92 @@
+Return-Path: <caml-list-owner@inria.fr>
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by c5ff346549e7 (Postfix) with ESMTPS id 706205D4
+	for <caml-list@inbox.ocaml.org>; Sun, 17 Jun 2018 06:41:36 +0000 (UTC)
+X-IronPort-AV: E=Sophos;i="5.51,233,1526335200"; 
+   d="scan'208";a="332101860"
+Received: from sympa.inria.fr ([193.51.193.213])
+  by mail2-relais-roc.national.inria.fr with ESMTP; 17 Jun 2018 08:41:35 +0200
+Received: by sympa.inria.fr (Postfix, from userid 20132)
+	id 2D10282474; Sun, 17 Jun 2018 08:41:35 +0200 (CEST)
+Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr [192.134.164.104])
+	by sympa.inria.fr (Postfix) with ESMTPS id BA50682474
+	for <caml-list@sympa.inria.fr>; Sun, 17 Jun 2018 08:41:31 +0200 (CEST)
+X-IronPort-AV: E=Sophos;i="5.51,233,1526335200"; 
+   d="scan'208";a="269019499"
+Received: from abo-154-110-68.mrs.modulonet.fr (HELO [192.168.0.15]) ([85.68.110.154])
+  by mail3-relais-sop.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 17 Jun 2018 08:41:31 +0200
+Date: Sun, 17 Jun 2018 08:41:31 +0200 (CEST)
+From: Julia Lawall <julia.lawall@lip6.fr>
+X-X-Sender: jll@hadrien
+To: Viet Le <vietlq85@gmail.com>
+cc: Chet Murthy <murthy.chet@gmail.com>, 
+    OCaml Mailing List <caml-list@inria.fr>
+In-Reply-To: <CAG_8+G7PGqtaGZqsprh+YXx5vejaLrncsFQE5BD3sTCZd0Unsg@mail.gmail.com>
+Message-ID: <alpine.DEB.2.20.1806170841060.6553@hadrien>
+References: <m2efh8rudt.fsf@charm-ecran.irisa.fr> <CA++P_gedkSopHL3zD+dPRqGLmxvCykMWRU6tFMRk-x3_vOsnhw@mail.gmail.com> <CAG_8+G7PGqtaGZqsprh+YXx5vejaLrncsFQE5BD3sTCZd0Unsg@mail.gmail.com>
+User-Agent: Alpine 2.20 (DEB 67 2015-01-07)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; BOUNDARY="8323329-990630327-1529217691=:6553"
+Subject: Re: [Caml-list] a question about GADTs
+Reply-To: Julia Lawall <julia.lawall@lip6.fr>
+X-Loop: caml-list@inria.fr
+X-Sequence: 16946
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+Precedence: bulk
+Sender: caml-list-request@inria.fr
+X-no-archive: yes
+List-Id: <caml-list.inria.fr>
+List-Archive: <http://sympa.inria.fr/sympa/arc/caml-list>
+List-Help: <mailto:sympa_inria@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa_inria@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa_inria@inria.fr?subject=unsubscribe%20caml-list>
+
+--8323329-990630327-1529217691=:6553
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8BIT
+
+
+
+On Sun, 17 Jun 2018, Viet Le wrote:
+
+> What is PL? I would appreciate more descriptive language.
+
+programming language, as in POPL.
+
+julia
+
+>
+> I can see that Janestreet claim huge benefits from GADTs (check their blog).
+>
+> I also came across a blog about writing GraphQL server using OCaml & GADT.
+> Worth checking out.
+>
+> String/print formatting used to rely on unsafe Obj.magic. For a few years
+> OCaml string/print formatting is using GADT that provide compile time
+> safety. Lookup format6, and OCaml GADT for string/print formatting. That’s
+> the most real-world usage.
+>
+> Viet
+>
+> On Sun, 17 Jun 2018 at 04:44, Chet Murthy <murthy.chet@gmail.com> wrote:
+>       I'm curious: is there any real-world use of GADTs, other than in
+>       PL itself?  I mean, writing interpreters, compilers, and such? 
+>       Any non-PL use?
+>
+> Again, not trying to start a flame-war -- just *curious*.
+>
+> --
+> Kind regards,
+> Viet
+>
+>
+
+-- 
+Caml-list mailing list.  Subscription management and archives:
+https://sympa.inria.fr/sympa/arc/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs
+--8323329-990630327-1529217691=:6553--
