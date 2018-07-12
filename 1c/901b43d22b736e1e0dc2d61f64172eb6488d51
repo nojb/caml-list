@@ -1,0 +1,77 @@
+Return-Path: <caml-list-owner@inria.fr>
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by c5ff346549e7 (Postfix) with ESMTPS id 233675D4
+	for <caml-list@inbox.ocaml.org>; Thu, 12 Jul 2018 07:06:07 +0000 (UTC)
+X-IronPort-AV: E=Sophos;i="5.51,341,1526335200"; 
+   d="scan'208";a="338535634"
+Received: from sympa.inria.fr ([193.51.193.213])
+  by mail2-relais-roc.national.inria.fr with ESMTP; 12 Jul 2018 09:06:05 +0200
+Received: by sympa.inria.fr (Postfix, from userid 20132)
+	id 7E6AA82487; Thu, 12 Jul 2018 09:06:05 +0200 (CEST)
+Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr [192.134.164.104])
+	by sympa.inria.fr (Postfix) with ESMTPS id 781E282416
+	for <caml-list@sympa.inria.fr>; Thu, 12 Jul 2018 09:06:01 +0200 (CEST)
+X-IronPort-AV: E=Sophos;i="5.51,341,1526335200"; 
+   d="scan'208";a="272715363"
+Received: from static-176-139-114-74.ftth.abo.bbox.fr (HELO MP-41043) ([176.139.114.74])
+  by mail3-relais-sop.national.inria.fr with ESMTP/TLS/AES256-GCM-SHA384; 12 Jul 2018 09:06:01 +0200
+User-agent: mu4e 1.0; emacs 26.1
+From: Thierry Martinez <Thierry.Martinez@inria.fr>
+To: caml-list <caml-list@inria.fr>
+Date: Thu, 12 Jul 2018 09:06:00 +0200
+Message-ID: <ow4y3ehc4rr.fsf@inria.fr>
+MIME-Version: 1.0
+Content-Type: text/plain
+Subject: [Caml-list] [ANN] Stdcompat 5
+Reply-To: Thierry Martinez <Thierry.Martinez@inria.fr>
+X-Loop: caml-list@inria.fr
+X-Sequence: 16986
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+Precedence: bulk
+Sender: caml-list-request@inria.fr
+X-no-archive: yes
+List-Id: <caml-list.inria.fr>
+List-Archive: <http://sympa.inria.fr/sympa/arc/caml-list>
+List-Help: <mailto:sympa_inria@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa_inria@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa_inria@inria.fr?subject=unsubscribe%20caml-list>
+
+Dear caml-list,
+
+It is my pleasure to announce a new release (#5) of Stdcompat!
+
+Stdcompat is a compatibility module for OCaml standard library,
+available from OCaml 3.07 to OCaml 4.07.0 (that is to say, the whole
+spectrum of OCaml compilers available in OPAM).
+
+Stdcompat.* redefines (most of the) symbols available in OCaml 4.07.0
+standard library, such as List.find_opt, floatarray, Uchar.t, Seq.t,
+result, etc.
+
+Stdcompat has no dependency! Former versions used to rely on cppo but
+the preprocessing is now done by a ./configure script (generated with
+autoconf).
+
+OPAM packages result, seq, uchar are optional dependencies: if they
+are installed, types declared by stdcompat are compatible with the
+types these packages declare.
+
+Stdcompat can be opened in the beginning of a module: its signature
+follows the signature of the standard library, including the new
+Stdlib module.
+
+Github repository: https://github.com/thierry-martinez/stdcompat
+Available in OPAM: opam install stdcompat
+
+Happy hacking!
+-- 
+Thierry.
+
+-- 
+Caml-list mailing list.  Subscription management and archives:
+https://sympa.inria.fr/sympa/arc/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs
