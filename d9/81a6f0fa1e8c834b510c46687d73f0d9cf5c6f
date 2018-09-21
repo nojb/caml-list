@@ -1,0 +1,68 @@
+Return-Path: <caml-list-owner@inria.fr>
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by c5ff346549e7 (Postfix) with ESMTP id 427DC5D6
+	for <caml-list@inbox.ocaml.org>; Fri, 21 Sep 2018 15:01:10 +0000 (UTC)
+X-IronPort-AV: E=Sophos;i="5.54,285,1534802400"; 
+   d="scan'208";a="347531727"
+Received: from sympa.inria.fr ([193.51.193.213])
+  by mail2-relais-roc.national.inria.fr with ESMTP; 21 Sep 2018 17:01:08 +0200
+Received: by sympa.inria.fr (Postfix, from userid 20132)
+	id 04FAF82500; Fri, 21 Sep 2018 17:01:08 +0200 (CEST)
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by sympa.inria.fr (Postfix) with ESMTPS id EEF78824CF;
+	Fri, 21 Sep 2018 17:00:57 +0200 (CEST)
+X-IronPort-AV: E=Sophos;i="5.54,285,1534802400"; 
+   d="scan'208";a="347531608"
+Received: from ec-ap-2-13-07.paris.inria.fr (HELO [192.168.1.5]) ([128.93.65.24])
+  by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 21 Sep 2018 17:00:57 +0200
+From: Damien Doligez <damien.doligez@inria.fr>
+Content-Type: text/plain;
+	charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+Message-Id: <ED3E5A1B-7B7C-47CC-A296-56CFAEF3086E@inria.fr>
+Date: Fri, 21 Sep 2018 17:00:57 +0200
+To: caml users <caml-list@inria.fr>,
+ caml announce <caml-announce@inria.fr>
+X-Mailer: Apple Mail (2.3445.9.1)
+Subject: [Caml-list] Release Candidate 4.07.1+rc1
+Reply-To: Damien Doligez <damien.doligez@inria.fr>
+X-Loop: caml-list@inria.fr
+X-Sequence: 17082
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+Precedence: bulk
+Sender: caml-list-request@inria.fr
+X-no-archive: yes
+List-Id: <caml-list.inria.fr>
+List-Archive: <http://sympa.inria.fr/sympa/arc/caml-list>
+List-Help: <mailto:sympa_inria@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa_inria@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa_inria@inria.fr?subject=unsubscribe%20caml-list>
+
+Dear OCaml users,
+
+The release of OCaml version 4.07.1 is imminent.  We have
+created a release candidate for your testing pleasure.  Please
+try it in opam and test your favourite software with it.  Then
+let me know whether it works for you.
+
+We want to know about any show-stopping bugs, especially in the
+compilation and installation phases.
+
+This release candidate will soon be available as a bunch of OPAM
+switches. It is also available as source code at this address:
+  http://caml.inria.fr/pub/distrib/ocaml-4.07/
+
+Happy hacking,
+
+-- Damien Doligez for the OCaml team.
+
+
+-- 
+Caml-list mailing list.  Subscription management and archives:
+https://sympa.inria.fr/sympa/arc/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs
