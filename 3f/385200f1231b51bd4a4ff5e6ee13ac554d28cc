@@ -1,0 +1,306 @@
+Return-Path: <caml-list-owner@inria.fr>
+Received: from mail2-relais-roc.national.inria.fr (mail2-relais-roc.national.inria.fr [192.134.164.83])
+	by c5ff346549e7 (Postfix) with ESMTP id B9AEB1E6
+	for <caml-list@inbox.ocaml.org>; Tue,  2 Oct 2018 12:10:47 +0000 (UTC)
+X-IronPort-AV: E=Sophos;i="5.54,331,1534802400"; 
+   d="scan'208,217";a="349095050"
+Received: from sympa.inria.fr ([193.51.193.213])
+  by mail2-relais-roc.national.inria.fr with ESMTP; 02 Oct 2018 14:10:37 +0200
+Received: by sympa.inria.fr (Postfix, from userid 20132)
+	id B9C5D824F6; Tue,  2 Oct 2018 14:10:37 +0200 (CEST)
+Received: from mail3-relais-sop.national.inria.fr (mail3-relais-sop.national.inria.fr [192.134.164.104])
+	by sympa.inria.fr (Postfix) with ESMTPS id 5D732824CF
+	for <caml-list@sympa.inria.fr>; Tue,  2 Oct 2018 13:57:49 +0200 (CEST)
+Authentication-Results: mail3-smtp-sop.national.inria.fr; spf=None smtp.pra=sqj-si-pub-request@univ-grenoble-alpes.fr; spf=Pass smtp.mailfrom=sqj-si-pub-owner@univ-grenoble-alpes.fr; spf=None smtp.helo=postmaster@amazone.ujf-grenoble.fr
+IronPort-PHdr: =?us-ascii?q?9a23=3A4e4nuRXlzlwPKiWU3Ejttl/jKkTV8LGtZVwlr6E/?=
+ =?us-ascii?q?grcLSJyIuqrYZRaGuadThVPEFb/W9+hDw7KP9fy4BipYud6oizMrSNR0TRgLiM?=
+ =?us-ascii?q?EbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ/iOgVr?=
+ =?us-ascii?q?O+/7BpDdj9it1+C15pbffxhEiCCybL9uLhi6txndutULioZ+N6g9zQfErGFVcO?=
+ =?us-ascii?q?pM32NoIlyTnxf45siu+ZNo7jpdtfE8+cNeSKv2Z6s3Q6BWAzQgKGA1+dbktQLf?=
+ =?us-ascii?q?QguV53sTSXsZnxxVCAXY9h76X5Pxsizntuph3SSRIMP7QawoVTmk8qxmUwHjhj?=
+ =?us-ascii?q?sZODEl8WHXks1wg7xdoBK9vBx03orYbJiIOPZiYq/ReNUXSm1dUMhRSSFNG5qw?=
+ =?us-ascii?q?YYkSAOobJOpWspT9p0AWrRSgGQasGPrjyjtPhn74wKY21+QsHQTA0QMnA9wAsG?=
+ =?us-ascii?q?rZoMzsOKkQTO+11rDEwyjeb/NNwTfy9pTHcgw8qv2IQ758bc/dxE8yHA3Hk1qQ?=
+ =?us-ascii?q?s5ToMTOJ2eQXvGeV4eluW/yohWA6tQ5xuiCvxtwuh4THmo4byE3I+Tt2zYsuP9?=
+ =?us-ascii?q?K0VEt7bMSkEJdMtSyXMZZ9TMM4Q2FvvSY30r8JuZq6fCcU05Qs2h7RZOaDc4eU?=
+ =?us-ascii?q?5RLjUvieKip/iX1nfLK/hgi98VO6xuP8TMa01EpFri1DktbSrX0NyhrT6smZSv?=
+ =?us-ascii?q?dk8UehwyiA1wbU6u5fJUA7i7PXJIQlwr4oiJUTql7PHiHsmEjviqKda0sq+u+t?=
+ =?us-ascii?q?6+v9Y7XmoIeRN5RsigHkM6QunMO/DvoiMgQUQ2eb/uG82bv+9kP6WLVHluA6n6?=
+ =?us-ascii?q?3XvZzAJckWqbS1DxFb34sg8RqzETer3dsAkXUaKF9IdwiLg5XtNlzKOvz0E/ey?=
+ =?us-ascii?q?j06ynDpqwf3NI6fvDY/XLnfZlbfsZbZ95FBYyAo01d1Q/ZdUBasAIfL0XE/+qs?=
+ =?us-ascii?q?bUDgI7Mwy62urnB8992Z0YWWKIGaCZNL3dvUWG5uI1O+WMZYkVtyjhK/U9+vLj?=
+ =?us-ascii?q?iXE0lUUdcKSmx5cbdn61E/d8L0mHYXfhjc8NEWIQsQo/SOzqhkeCUTlWZ3uqRK?=
+ =?us-ascii?q?I8/zM7BJu9DYfCX4ytmKGB0zyiEp1RaGFGDE6DEW3zeoWZXfcMaTySLtZukjwe?=
+ =?us-ascii?q?S7ehTYgh2gqqtADk0rZoNO7U+jUGupL4ztR16ffTmQko9TNoF8Sdz32NT2Zsk2?=
+ =?us-ascii?q?wUXTA22aR/rVV5yleCyqh4n+dVFcdT5vNMSgc1L4TQz+18C9DoWwLOZM2FSFi8?=
+ =?us-ascii?q?QobuPDcqU9hkxtYPZ1p6Sc6ziwjK9zesAqFQmKaGAps+9q+Z1nzpKt07xWyRz7?=
+ =?us-ascii?q?QrjVQtXp5SM3a7jLV07QnZCsOTy16AleOxdOEEwSSeyGDW1nOM+VpZFRZtW43Y?=
+ =?us-ascii?q?W3EBI0TMoNL+7EfPCraqEbk8dAVbmvSPMq9bVtq8vFFHxOzUFt3aaGW3li/kFB?=
+ =?us-ascii?q?KJy6jKYoPucGIb0Q3ADkka1g8J8HCBPwwzQy6lu2/FSjJ0QxanRkr28OB4qTuf?=
+ =?us-ascii?q?Q0gyxhuGaAU10rOv+xcThNSQSugY2fQZviYkqj8yHUrrjPzMDN/Vlg5gcb4UT9?=
+ =?us-ascii?q?o561BB2CqNhgh8M4fmAalmjVkYfixquULwkhptB4NHm8wn6Xou1Adpb6yChgAS?=
+ =?us-ascii?q?PwiE1Iz9b+WEYlL5+wqiPuuJhwiPgubTwb8G7bEDk3umuQioEkQ49HA9j4tI1X?=
+ =?us-ascii?q?qCo5rQAQwVW5b8F08z7xVh4b/AMHBku9HkkEZ0OKzxiQfsnsozDbF5mAumfska?=
+ =?us-ascii?q?P7mJEgj4F8BfDsy2JfdslUL7NktZbtAXz7Y9OoadT9XD2KOvO7w9zjujhHZA5o?=
+ =?us-ascii?q?07z0CCsiVmR+jP1ZIIhf+CjFOK?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0A3AAAHXLNbh/7uNsFaHAEBAQQBAQcEA?=
+ =?us-ascii?q?QGBU4JygRQTg3SIdIs8ghyWTYIFGAEMBgGBS4JwA4QRGQcBBDIWAQMBAQIBAQE?=
+ =?us-ascii?q?BARMBAQEKCwkIKSMMgjUFAgMaBoJhAhoGIw0VAw4DAwEBAQYCSQMCAgMBKBoqB?=
+ =?us-ascii?q?YMcAYIBBAulGIEuhCsBPIUvBYsDgVg/gTkfgh6FBYMoMYImAog+lH4HAoECgQq?=
+ =?us-ascii?q?OQ4h+D4ZNkk+CcYEmIwWCATMaJ3YBgSaBGz6CD4M1ilRtewEBiwYCJAcpgXcBA?=
+ =?us-ascii?q?Q?=
+X-IPAS-Result: =?us-ascii?q?A0A3AAAHXLNbh/7uNsFaHAEBAQQBAQcEAQGBU4JygRQTg3S?=
+ =?us-ascii?q?IdIs8ghyWTYIFGAEMBgGBS4JwA4QRGQcBBDIWAQMBAQIBAQEBARMBAQEKCwkIK?=
+ =?us-ascii?q?SMMgjUFAgMaBoJhAhoGIw0VAw4DAwEBAQYCSQMCAgMBKBoqBYMcAYIBBAulGIE?=
+ =?us-ascii?q?uhCsBPIUvBYsDgVg/gTkfgh6FBYMoMYImAog+lH4HAoECgQqOQ4h+D4ZNkk+Cc?=
+ =?us-ascii?q?YEmIwWCATMaJ3YBgSaBGz6CD4M1ilRtewEBiwYCJAcpgXcBAQ?=
+X-IronPort-AV: E=Sophos;i="5.54,331,1534802400"; 
+   d="scan'208,217";a="280664723"
+Received: from amazone.ujf-grenoble.fr ([193.54.238.254])
+  by mail3-smtp-sop.national.inria.fr with ESMTP; 02 Oct 2018 13:57:48 +0200
+Received: from danube.u-ga.fr (danube.u-ga.fr [195.83.24.186])
+	by amazone.ujf-grenoble.fr (Postfix) with ESMTP id 42Pd242X2mz1ykk;
+	Tue,  2 Oct 2018 13:57:48 +0200 (CEST)
+Received: by danube.u-ga.fr (Postfix, from userid 498)
+	id DEE045BA; Tue,  2 Oct 2018 13:57:47 +0200 (CEST)
+Received: from smtp-in.u-ga.fr (smtp-in.u-ga.fr [195.83.24.182])
+	by danube.u-ga.fr (Postfix) with ESMTP id 849A25A4
+	for <sqj-si-pub@listes.univ-grenoble-alpes.fr>; Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+Received: from mxb2-2.relay.renater.fr (mxb2-2.relay.renater.fr [194.214.200.9])
+	by smtp-in.u-ga.fr (Postfix) with ESMTP id E4CC8400FF
+	for <sqj-si-pub@univ-grenoble-alpes.fr>; Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+Received: from mxb2-2.relay.renater.fr (localhost [127.0.0.1])
+	(using TLSv1.1 with cipher AECDH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mxb2-2.relay.renater.fr (asm) with ESMTPS id CC513605EF
+	for <sqj-si-pub+split@univ-grenoble-alpes.fr>; Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+Received: from zm-mta-out-1.u-ga.fr (zm-mta-out-1.u-ga.fr [152.77.200.56])
+	(using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mxb2-2.relay.renater.fr (asm) with ESMTPS id 8CED3605EA;
+	Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+Received: from zm-mta-out.u-ga.fr (zm-mta-out.u-ga.fr [152.77.200.58])
+	by zm-mta-out-1.u-ga.fr (Postfix) with ESMTP id 1C05CA05F9;
+	Tue,  2 Oct 2018 13:56:00 +0200 (CEST)
+Received: from smtps.univ-grenoble-alpes.fr (smtps2.u-ga.fr [195.83.24.202])
+	by zm-mta-out.u-ga.fr (Postfix) with ESMTP id 6178DE0091;
+	Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+Received: from [10.0.1.2] (falcone-capsule.inrialpes.fr [194.199.25.26])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	(Authenticated sender: falconey@univ-grenoble-alpes.fr)
+	by smtps.univ-grenoble-alpes.fr (Postfix) with ESMTPSA id 516F560476;
+	Tue,  2 Oct 2018 13:55:58 +0200 (CEST)
+From: Ylies Falcone <Ylies.Falcone@univ-grenoble-alpes.fr>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_48CA97BD-7E46-4011-96F4-926EFE5E0336"
+Reply-To: =?utf-8?Q?Yli=C3=A8s_Falcone?= <ylies.falcone@univ-grenoble-alpes.fr>,
+ Mariani Leonardo <mariani@disco.unimib.it>
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+Date: Tue, 2 Oct 2018 13:55:57 +0200
+Message-Id: <AD19171B-BF21-43DB-A690-BFC707A0F6F7@univ-grenoble-alpes.fr>
+Cc: =?utf-8?Q?Yli=C3=A8s_Falcone?= <ylies.falcone@univ-grenoble-alpes.fr>,
+ Mariani Leonardo <mariani@disco.unimib.it>
+To: sqj-si-pub@univ-grenoble-alpes.fr
+X-Mailer: Apple Mail (2.3445.9.1)
+X-Mailstro-Variables: ZWRydmRkdHRkZHJoZWVpcGRobXJnaGlsaGhmcmhob21oZXBqZ2hsaWhndnNoZHJoZmdybGhndG9oaG52Z2VzdWhobmloaHZxZGhncmhndm5oaG9zZ2hsdmdkcXJnaGxwaGd2c2hkcmZoaHJwZGhydGdocHRoaHRvaGVwaGlobGloZ3ZzaGRyZmhncmxoZ3RvaGhudmdlc3VoaG5paGh2cWRoZ3JoZ3ZuaGhvc2dobHZnZHFyZ2hscGhndnNoZHJmaGhybmVjdXZlaGx1aGhzdGhndnJoZnVpaGlpdmdlcHRkuGNvbnRleHQuYXMuaW50ZXJuYWxwYXJhbXM9czpUbz1zcWotc2ktcHViQHVuaXYtZ3Jlbm9ibGUtYWxwZXMuZnINClJlcGx5VG89WWxp6HNfRmFsY29uZSA8eWxpZXMuZmFsY29uZUB1bml2LWdyZW5vYmxlLWFscGVzLmZyPiwgTWFyaWFuaSBMZW9uYXJkbyA8bWFyaWFuaUBkaXNjby51bmltaWIuaXQ+DQpGcm9tPVlsaWVzIEZhbGNvbmUgPFlsaWVzLkZhbGNvbmVAdW5pdi1ncmVub2JsZS1hbHBlcy5mcj4NCrhjb250ZXh0LmFzLnNjb3JlPW46LTEwMLhjb250ZXh0LmFzLnN0YXRlPW46MLhjb250ZXh0LmF2LnZpcnVzZWQ9YjpmYWxzZbhjb250ZXh0LmF2LnZpcnVzbmFtZT1zOrhjb250ZXh0LmJ3Lm5hbWU9czo5OUJXTDk5V2hpdGVsaXN0IHNlcnZldXIgWmlt
+X-Mailstro-Variables: YnJhIFVHQSAyuGNvbnRleHQuYncuc3RhdGU9bjoxuGNvbnRleHQub2lwPXM6MTUyLjc3LjIwMC41Nrhjb250ZXh0Lm9xaWQ9czo4Q0VEMzYwNUVBuGNvbnRleHQucmJsLmxpc3Q9czq4Y29udGV4dC5yYmwuc2VydmVyPXM6uGNvbnRleHQuc3BmLnBhc3M9Yjp0cnVluGNvbnRleHQuc3BmLnJlYXNvbj1zOrg=
+X-Original-Source-IP: 152.77.200.56
+X-Renater-SpamState: 0
+X-Renater-SpamScore: 0
+X-Renater-SpamCause:  
+X-Renater-ServerName: mxb2-2.relay.renater.fr
+X-Bizanga: IMP - mxb2-2.relay.renater.fr
+X-Validation-by: ylies.falcone@univ-grenoble-alpes.fr
+X-Loop: sqj-si-pub@univ-grenoble-alpes.fr
+Errors-To: sqj-si-pub-owner@univ-grenoble-alpes.fr
+Sender: sqj-si-pub-request@univ-grenoble-alpes.fr
+X-no-archive: yes
+List-Help: <mailto:sympa@univ-grenoble-alpes.fr?subject=help>
+List-Subscribe: <mailto:sympa@univ-grenoble-alpes.fr?subject=subscribe%20sqj-si-pub>
+List-Unsubscribe: <mailto:sympa@univ-grenoble-alpes.fr?subject=unsubscribe%20sqj-si-pub>
+List-Post: <mailto:sqj-si-pub@univ-grenoble-alpes.fr>
+List-Owner: <mailto:sqj-si-pub-request@univ-grenoble-alpes.fr>
+List-Archive: <https://listes.univ-grenoble-alpes.fr/sympa/arc/sqj-si-pub>
+Archived-At: <https://listes.univ-grenoble-alpes.fr/sympa/arcsearch_id/sqj-si-pub/2018-10/AD19171B-BF21-43DB-A690-BFC707A0F6F7%40univ-grenoble-alpes.fr>
+X-Validation-by: ylies.falcone@univ-grenoble-alpes.fr
+Subject: [Caml-list] [sqj-si-pub] CFP Special issue on Improving Software
+ Quality through Formal Methods
+X-Loop: caml-list@inria.fr
+X-Sequence: 17088
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+Precedence: bulk
+Sender: caml-list-request@inria.fr
+X-no-archive: yes
+List-Id: <caml-list.inria.fr>
+List-Archive: <http://sympa.inria.fr/sympa/arc/caml-list>
+List-Help: <mailto:sympa_inria@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa_inria@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa_inria@inria.fr?subject=unsubscribe%20caml-list>
+
+
+--Apple-Mail=_48CA97BD-7E46-4011-96F4-926EFE5E0336
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Call for Papers
+
+Special Issue in Springer Software Quality Journal
+on
+Improving Software Quality through Formal Methods
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+
+
+=3D Overview
+
+Formal methods are paramount to ensure strong guarantees on the correct beh=
+avior of software. Based on mathematics and logic, formal methods help prac=
+titioners construct technology that can ensure increasingly important conce=
+rns such as safety, security, reliability and accountability.
+This special issue in the Springer Software Quality Journal [1] is dedicate=
+d to the presentation of novel results in the scope of formal methods for v=
+erification and testing of software, soliciting papers about approaches tha=
+t successfully combine a rigorous and formal background with the capability=
+ to address real software applications in realistic settings.
+Possible topics include, but are not limited to:
+=E2=80=A2 model checking
+=E2=80=A2 theorem proving
+=E2=80=A2 correct by construction development
+=E2=80=A2 model-based testing
+=E2=80=A2 software testing
+=E2=80=A2 symbolic execution
+=E2=80=A2 static and dynamic analysis
+=E2=80=A2 abstract interpretation
+=E2=80=A2 analysis methods for dependable systems
+=E2=80=A2 software certification and proof carrying code
+=E2=80=A2 fault diagnosis and debugging
+=E2=80=A2 verification and validation of large-scale software systems
+
+=3D Requirements for Submission
+
+Papers should be original and must not have been previously published or be=
+ing currently under submission at any other venue. A paper extending a conf=
+erence or workshop publication should contain at least 30% of new material =
+to be considered for publication. In that case, a clear indication in the i=
+ntroduction is expected.
+Manuscripts should be formatted according to the rules of the Software Qual=
+ity Journal, available by following the "Instructions for Authors=E2=80=9D =
+link on the journal webpage [1]. See [2] for frequently asked questions.
+
+=3D Reviewing Details
+
+Each paper will be reviewed by at least two experts selected by the guest e=
+ditors.
+
+=3D Important dates
+
+=E2=80=A2 Deadline for submissions: 30 Nov 2018
+=E2=80=A2 First round reviews: March 2019
+=E2=80=A2 Submission of revised papers: May 2019
+=E2=80=A2 Notification of acceptance: July 2019
+=E2=80=A2 Camera-ready version: September 2019
+
+=3D Guest Editors
+
+All inquiries can be sent to the guest editors of the journal:
+
+Yli=C3=A8s Falcone
+Univ. Grenoble Alpes and Inria
+Ylies.Falcone@univ-grenoble-alpes.fr <mailto:Ylies.Falcone@univ-grenoble-al=
+pes.fr>
+
+Leonardo Mariani
+University of Milano Bicocca=20
+mariani@disco.unimib.it <mailto:mariani@disco.unimib.it>
+
+
+=3D References
+
+[1] Software Quality Journal, 2018. https://www.springer.com/computer/swe/j=
+ournal/11219 <https://www.springer.com/computer/swe/journal/11219>.
+[2] Springer Frequently Asked Questions, 2018. https://www.springer.com/gp/=
+authors-editors/journal-author/frequently-asked-questions/3832 <https://www=
+.springer.com/gp/authors-editors/journal-author/frequently-asked-questions/=
+3832>.
+
+--=20
+Caml-list mailing list.  Subscription management and archives:
+https://sympa.inria.fr/sympa/arc/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs=
+
+--Apple-Mail=_48CA97BD-7E46-4011-96F4-926EFE5E0336
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dutf-8"></head><body style=3D"word-wrap: break-word; -webkit-nbsp-mode: s=
+pace; line-break: after-white-space;" class=3D""><div dir=3D"auto" style=3D=
+"word-wrap: break-word; -webkit-nbsp-mode: space; line-break: after-white-s=
+pace;" class=3D""><div dir=3D"auto" style=3D"word-wrap: break-word; -webkit=
+-nbsp-mode: space; line-break: after-white-space;" class=3D"">Call for Pape=
+rs<br class=3D""><br class=3D"">Special Issue in Springer Software Quality =
+Journal<br class=3D"">on<br class=3D"">Improving Software Quality through F=
+ormal Methods<br class=3D"">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<br class=3D""><br class=3D""><br class=3D=
+"">=3D Overview<br class=3D""><br class=3D"">Formal methods are paramount t=
+o ensure strong guarantees on the correct behavior of software. Based on ma=
+thematics and logic, formal methods help practitioners construct technology=
+ that can ensure increasingly important concerns such as safety, security, =
+reliability and accountability.<br class=3D"">This special issue in the Spr=
+inger Software Quality Journal [1] is dedicated to the presentation of nove=
+l results in the scope of formal methods for verification and testing of so=
+ftware, soliciting papers about approaches that successfully combine a rigo=
+rous and formal background with the capability to address real software app=
+lications in realistic settings.<br class=3D"">Possible topics include, but=
+ are not limited to:<br class=3D"">=E2=80=A2 model checking<br class=3D"">=
+=E2=80=A2 theorem proving<br class=3D"">=E2=80=A2 correct by construction d=
+evelopment<br class=3D"">=E2=80=A2 model-based testing<br class=3D"">=E2=80=
+=A2 software testing<br class=3D"">=E2=80=A2 symbolic execution<br class=3D=
+"">=E2=80=A2 static and dynamic analysis<br class=3D"">=E2=80=A2 abstract i=
+nterpretation<br class=3D"">=E2=80=A2 analysis methods for dependable syste=
+ms<br class=3D"">=E2=80=A2 software certification and proof carrying code<b=
+r class=3D"">=E2=80=A2 fault diagnosis and debugging<br class=3D"">=E2=80=
+=A2 verification and validation of large-scale software systems<br class=3D=
+""><br class=3D"">=3D Requirements for Submission<br class=3D""><br class=
+=3D"">Papers should be original and must not have been previously published=
+ or being currently under submission at any other venue. A paper extending =
+a conference or workshop publication should contain at least 30% of new mat=
+erial to be considered for publication. In that case, a clear indication in=
+ the introduction is expected.<br class=3D"">Manuscripts should be formatte=
+d according to the rules of the Software Quality Journal, available by foll=
+owing the "Instructions for Authors=E2=80=9D link on the journal webpage [1=
+]. See [2] for frequently asked questions.<br class=3D""><br class=3D"">=3D=
+ Reviewing Details<br class=3D""><br class=3D"">Each paper will be reviewed=
+ by at least two experts selected by the guest editors.<br class=3D""><br c=
+lass=3D"">=3D Important dates<br class=3D""><br class=3D"">=E2=80=A2 Deadli=
+ne for submissions: 30 Nov 2018<br class=3D"">=E2=80=A2 First round reviews=
+: March 2019<br class=3D"">=E2=80=A2 Submission of revised papers: May 2019=
+<br class=3D"">=E2=80=A2 Notification of acceptance: July 2019<br class=3D"=
+">=E2=80=A2 Camera-ready version: September 2019<br class=3D""><br class=3D=
+"">=3D Guest Editors<br class=3D""><br class=3D"">All inquiries can be sent=
+ to the guest editors of the journal:<br class=3D""><br class=3D"">Yli=C3=
+=A8s Falcone<br class=3D"">Univ. Grenoble Alpes and Inria<br class=3D""><a =
+href=3D"mailto:Ylies.Falcone@univ-grenoble-alpes.fr" class=3D"">Ylies.Falco=
+ne@univ-grenoble-alpes.fr</a><br class=3D""><br class=3D"">Leonardo Mariani=
+<br class=3D"">University of Milano Bicocca&nbsp;<br class=3D""><a href=3D"=
+mailto:mariani@disco.unimib.it" class=3D"">mariani@disco.unimib.it</a><br c=
+lass=3D""><br class=3D""><br class=3D"">=3D References<br class=3D""><br cl=
+ass=3D"">[1] Software Quality Journal, 2018.&nbsp;<a href=3D"https://www.sp=
+ringer.com/computer/swe/journal/11219" class=3D"">https://www.springer.com/=
+computer/swe/journal/11219</a>.<br class=3D"">[2] Springer Frequently Asked=
+ Questions, 2018.&nbsp;<a href=3D"https://www.springer.com/gp/authors-edito=
+rs/journal-author/frequently-asked-questions/3832" class=3D"">https://www.s=
+pringer.com/gp/authors-editors/journal-author/frequently-asked-questions/38=
+32</a>.</div></div></body></html>=
+
+--Apple-Mail=_48CA97BD-7E46-4011-96F4-926EFE5E0336--
