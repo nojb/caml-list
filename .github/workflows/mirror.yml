@@ -1,0 +1,25 @@
+name: mirror
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'master'
+      - name: Add remote
+        run: |
+          git remote add -f upstream https://inbox.ocaml.org/caml-list
+      - name: Sync
+        run: |
+          git config --global user.name "Nicolás Ojeda Bär"
+          git config --global user.email n.oje.bar@gmail.com
+          git merge --ff-only upstream/master
+      - name: Push
+        run: |
+          git push
